@@ -1,0 +1,3 @@
+class CakesController < ApplicationController
+    
+end
