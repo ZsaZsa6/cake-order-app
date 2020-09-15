@@ -1,7 +1,12 @@
 class CustomersController < ApplicationController
+    before_action :set_user, only: [:profile, :show, :edit, :update]
+
+    def profile
+        @orders = @customer.orders
+    end
 
     def new
-        @customer = Customer.new
+        @customer = Customer.new        
     end
 
     def create
@@ -13,12 +18,18 @@ class CustomersController < ApplicationController
         else 
           if Customer.find_by(username: params[:customer][:username]) || Customer.find(email: params[:customer][:email])
             flash[:alert] = "Looks like you've already signed up!"
-            redirect_to login_path
+            # redirect_to login_path
           else 
             render :new
           end 
         end 
       end 
+
+      def show 
+        @orders = @customer.orders
+        @order = Order.find(params[:order_id]) if params[:order_id]
+      end 
+
 
 
 
