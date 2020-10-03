@@ -2,6 +2,6 @@
 
 
 <h2><%= "#{current_customer.username}, would you like to create a cake from a past order or create a new order?" %></h2>
-<h3> See my orders <h3>
-<h3> Create a new order<h3>
+<h3><%= link_to "See my orders", '/orders/index' %><h3>
+<h3><%= link_to "Create a new order", 'orders/new' %><h3>
 <%= link_to "Logout", logout_path, method: :delete %><br>
