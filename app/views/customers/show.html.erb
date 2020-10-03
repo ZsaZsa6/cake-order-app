@@ -1,9 +1,7 @@
 <div class="customer-show">
 
-<h1> Customer's Orders </h1>
-<h2><%= "#{current_customer.username}, would you like to create a cake from a past order?" %></h2>
-<h3> Click on the order ID to view the contents of the order. <h3>
 
-<% @orders.each do |order| %>
-    <%= link_to order.id %>
-<% end %>
+<h2><%= "#{current_customer.username}, would you like to create a cake from a past order or create a new order?" %></h2>
+<h3> See my orders <h3>
+<h3> Create a new order<h3>
+<%= link_to "Logout", logout_path, method: :delete %><br>
