@@ -1,0 +1,8 @@
+<h1><%= "#{current_customer.username}'s Orders" %></h1>
+<%= form_for @customers_orders do |f| %>
+    
+    <%= f.label :order_id %><br><br>
+    <%= f.label :description %><br><br>
+    
+<% end %>
+    

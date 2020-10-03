@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     end
     def show
         @customer_orders = @orders.each do |order|
-            customer_order.find_by(order_id: @order.id, customer_id: current_customer.id)
+            @order.find_by(order_id: @order.id, customer_id: current_customer.id)
         end        
     end
     def new 
