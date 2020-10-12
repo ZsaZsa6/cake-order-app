@@ -22,11 +22,11 @@ class CustomersController < ApplicationController
           end 
         end 
       end 
-
       def show 
-        @orders = @customer.orders
-        @order = Order.find(params[:order_id]) if params[:order_id]
+                
       end
+
+     
 
 
 
