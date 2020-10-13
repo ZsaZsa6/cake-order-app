@@ -25,19 +25,29 @@ class CustomersController < ApplicationController
       def show 
                 
       end
+      def edit
 
-     
+      end
 
+      def update
+        authenticate 
+        @user.update(user_params)
+          if @user.save
+            redirect_to user_path(@user)
+          else 
+            flash[:notice] = "Your account was not updated"     
+            render :edit
+          end 
+      end
 
-
-
+    
     private
     def customer_params
         params.require(:customer).permit(:username, :email, :password)
       end  
     
-      def set_customer
+    def set_customer
         @customer = Customer.find(params[:id])
-      end
+    end
     
 end
