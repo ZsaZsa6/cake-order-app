@@ -9,7 +9,13 @@ class OrdersController < ApplicationController
     end
 
     def create 
-        Order.create(order_params)
+        Order.create(description: params[:description])
+         if @order.save
+            redirect_to @order  
+         else
+            render :new
+         end      
+        
     end
 
     def edit
@@ -17,18 +23,18 @@ class OrdersController < ApplicationController
     end
     
     def update
-        @order.update(order_params)
+        @order.update(description: params[:description])
           if @order.save
             redirect_to order_path(@order)
           else 
-            flash[:notice] = "Your order was not updated"     
+            
             render :edit
           end
     end
     
     
-    private
-    def order_params
-        params.permit(:order_id, :description, :customer_id)
-    end 
+    # private
+    # def order_params
+    #     params.permit(:cake_id, :description, :customer_id)
+    # end 
 end
