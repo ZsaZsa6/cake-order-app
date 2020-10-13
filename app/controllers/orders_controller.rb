@@ -1,15 +1,12 @@
 class OrdersController < ApplicationController
-    def index
-        @order = Order.new       
-    end
-
+   
     def show
        @customer_orders = @orders.each do |order|
             @order.find_by(customer_id: current_customer.id)
         end      
     end
     def create 
-        
+
     end
 
 
@@ -19,6 +16,6 @@ class OrdersController < ApplicationController
     
     private
     def order_params
-        params.permit(:order_id,:description, :created_at, :updated_at, :customer_id, :cake_id)
-      end 
+        params.require(:order).permit(:description, :created_at, :updated_at, :customer_id, :cake_id)
+    end 
 end
