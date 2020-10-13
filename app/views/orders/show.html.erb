@@ -1,11 +1,10 @@
 <h1>Your orders</h1>
 <h3>Select the order you would like to see</h3>
 
-<%= render 'form' %>
 
-<%= form_for @customer_orders do |f| %>
- Order ID:  <%= link_to :order_id %>
- Description: <%= f.label :description %>
+<%= form_for @orders do |f| %>
+ 
+ <%= f.label :description %>
  <% end %>
 
 

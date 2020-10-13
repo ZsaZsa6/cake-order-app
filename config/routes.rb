@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete '/sessions', to: "sessions#destroy", as: "logout"
   resources :orders, only: [:new, :show, :create, :edit]
   resources :customers
-  resources :cakes
+  resources :cakes, only: [:new, :show]
   
 
 end

@@ -1,21 +1,22 @@
 class OrdersController < ApplicationController
    
+    def new 
+        @order = Order.new(customer_id: [current_customer.id])
+        render '/cakes/new'
+
+    end
+
     def show
-       @customer_orders = @orders.each do |order|
-            @order.find_by(customer_id: current_customer.id)
-        end      
+       @orders = Order.all    
     end
     def create 
 
     end
 
-
-    def new 
-        @order = Order.new(customer_id: [current_customer.id])
-    end
+    
     
     private
     def order_params
-        params.require(:order).permit(:order_id, :description)
+        params.require(:order).permit(:order_id, :description, :customer_id)
     end 
 end
