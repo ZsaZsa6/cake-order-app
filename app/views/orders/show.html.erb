@@ -2,10 +2,10 @@
 <h3>Select the order you would like to see</h3>
 
 
-<%= form_for @orders do |f| %>
- 
- <%= f.label :description %>
- <% end %>
+<% for  @order in @orders %>
+  <%= link_to @order.description %>
+  
+<% end %>
 
 
 

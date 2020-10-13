@@ -2,9 +2,9 @@ class CakesController < ApplicationController
     def new
         @cake = Cake.new
     end
-    # def create
-
-    # end
+    def create
+        Cake.create(cake_params)
+    end
     def show
         @cakes = Cake.all
     end
