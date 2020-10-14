@@ -21,7 +21,10 @@ class CakesController < ApplicationController
 
     end
 
-    
+    def destroy
+        Cake.destroy(params[:id])
+        redirect_to cakes_path
+    end
 
     private
     def set_cake
