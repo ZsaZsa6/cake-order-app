@@ -6,7 +6,7 @@ class CakesController < ApplicationController
         Cake.create(cake_params)
     end
     def show
-        @cakes = Cake.all
+        @cake = 
     end
 
     private

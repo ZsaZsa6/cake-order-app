@@ -1,0 +1,8 @@
+
+<h3>Select the order you would like to see</h3>
+
+
+<% for  @order in @orders %>
+  <%= link_to @order.description, order_path(@order) %>
+  
+<% end %>

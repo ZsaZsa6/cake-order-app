@@ -1,11 +1,6 @@
-<h1>Your orders</h1>
-<h3>Select the order you would like to see</h3>
-
-
-<% for  @order in @orders %>
-  <%= link_to @order.description %>
-  
-<% end %>
-
-
-
+<h2>Description: <%= @order.description %></h2><br><br>
+<h3>Number of tiers: <%= @order.cake.tiers %></h3><br>
+<h3> Flavor: <%= @order.cake.flavors%></h3><br>
+<h3> Filling: <%= @order.cake.fillings%></h3><br>
+<h3> Frosting: <%= @order.cake.frosting%></h3><br>
+<h3> Size: <%= @order.cake.size%> inches </h3>

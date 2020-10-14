@@ -4,12 +4,16 @@ class OrdersController < ApplicationController
         @order = Order.new(customer_id: [current_customer.id])
     end
 
-    def show
+    def index
        @orders = Order.all    
     end
 
+    def show
+        @order = Order.find(params[:id])
+    end
+
     def create 
-        Order.create(description: params[:description])
+        Order.create(order_params)
          if @order.save
             redirect_to @order  
          else
@@ -23,7 +27,7 @@ class OrdersController < ApplicationController
     end
     
     def update
-        @order.update(description: params[:description])
+        @order.update(order_params)
           if @order.save
             redirect_to order_path(@order)
           else 
@@ -33,8 +37,8 @@ class OrdersController < ApplicationController
     end
     
     
-    # private
-    # def order_params
-    #     params.permit(:cake_id, :description, :customer_id)
-    # end 
+    private
+    def order_params
+        params.require(:order).permit(:cake_id, :description, :customer_id)
+    end 
 end
