@@ -14,11 +14,9 @@ class OrdersController < ApplicationController
 
     def create 
         Order.create(order_params)
-         if @order.save
-            redirect_to @order  
-         else
-            render :new
-         end      
+         
+            redirect_to  '/cakes/new'
+     
         
     end
 

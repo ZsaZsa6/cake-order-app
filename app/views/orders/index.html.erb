@@ -3,6 +3,6 @@
 
 
 <% for  @order in @orders %>
-  <%= link_to @order.description, order_path(@order) %>
-  
+  <%= link_to @order.description, order_path(@order) %><br>
+  <%= link_to "Make new order", 'orders/new' %>
 <% end %>

@@ -6,7 +6,7 @@ class CakesController < ApplicationController
         Cake.create(cake_params)
     end
     def show
-        @cake = 
+        @cake = Cake.find(param[:id])
     end
 
     private

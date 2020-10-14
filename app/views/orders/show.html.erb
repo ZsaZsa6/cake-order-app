@@ -1,6 +1,8 @@
-<h2>Description: <%= @order.description %></h2><br><br>
+<h2>Description: <%= @order.description %></h2> <br>
 <h3>Number of tiers: <%= @order.cake.tiers %></h3><br>
 <h3> Flavor: <%= @order.cake.flavors%></h3><br>
 <h3> Filling: <%= @order.cake.fillings%></h3><br>
 <h3> Frosting: <%= @order.cake.frosting%></h3><br>
 <h3> Size: <%= @order.cake.size%> inches </h3>
+<h2><%= link_to "Edit or Order this Cake", edit_cake_path %></h2><br>
+<h2><%= link_to "Return to orders", '/orders' %></h2><br>
