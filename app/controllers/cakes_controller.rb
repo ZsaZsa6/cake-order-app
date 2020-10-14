@@ -1,13 +1,19 @@
 class CakesController < ApplicationController
     before_action :set_cake, only: [:show, :edit, :update, :destroy]
     def new
-        @cake = Cake.new(cake_id: [cake.id])
+        @cake = Cake.new
     end
     def create
-        Cake.create(cake_params)
+        cake = Cake.create(cake_params)
+        redirect_to cake_path(cake)
     end
     def show
-        @cake = Cake.find_by()
+        @cake = Cake.find_by(params[:id])
+    end
+    def edit
+    end
+    def update
+        
     end
 
     private
