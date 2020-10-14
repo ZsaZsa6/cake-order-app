@@ -14,25 +14,23 @@ class OrdersController < ApplicationController
 
     def create 
         Order.create(order_params)
-         
-            redirect_to  '/cakes/new'
-     
+        redirect_to  '/cakes/new'    
         
     end
 
     def edit
-
+        @order = Order.find(params[:id])
     end
     
     def update
-        @order.update(order_params)
-          if @order.save
-            redirect_to order_path(@order)
-          else 
-            
-            render :edit
-          end
+       order = Order.find(params[:id])
+       order.update(order_params)
+       redirect_to order_path(order)         
     end
+
+    def destroy
+    end
+
     
     
     private

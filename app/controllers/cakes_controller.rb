@@ -8,19 +8,24 @@ class CakesController < ApplicationController
         redirect_to cake_path(cake)
     end
     def show
-        @cake = Cake.find_by(params[:id])
+        @cake = Cake.find(params[:id])
     end
     def edit
+        
+        @cake = Cake.find(params[:id])
     end
     def update
-        
+        cake = Cake.find(params[:id])
+        cake.update(cake_params)
+        redirect_to cake_path(cake)
+
     end
+
+    
 
     private
     def set_cake
-    
-    @cake = Cake.find(params[:id])
-
+       @cake = Cake.find(params[:id])
     end
 
     def cake_params

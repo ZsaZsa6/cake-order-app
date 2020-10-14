@@ -7,4 +7,5 @@
 <h3> Frosting: <%= @cake.frosting%></h3><br>
 <h3> Size: <%= @cake.size%> inches </h3>
 <%= link_to "Add this Cake to Order" %><br>
-<%= link_to "Edit this Cake", edit_cake_path(@cake) %>
+<%= link_to "Edit this Cake", edit_cake_path(@cake) %><br>
+<%= link_to "Delete this Cake", @cake, method: :delete %>
