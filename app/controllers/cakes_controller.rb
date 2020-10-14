@@ -1,6 +1,6 @@
 class CakesController < ApplicationController
     def new
-        @cake = Cake.new
+        @cake = Cake.new(cake_id: [order.id])
     end
     def create
         Cake.create(cake_params)
