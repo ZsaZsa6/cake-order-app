@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
     end
 
     def index
-       @orders = Order.all    
+       @order = Order.find_by(customer_id: [current_customer.id])
+        
     end
 
     def show
@@ -13,7 +14,8 @@ class OrdersController < ApplicationController
     end
 
     def create 
-        Order.create(order_params)
+        order = Order.create(order_params)
+        
         redirect_to  '/cakes/new'    
         
     end
@@ -39,4 +41,6 @@ class OrdersController < ApplicationController
     def order_params
         params.require(:order).permit(:cake_id, :description, :customer_id)
     end 
+     
+    
 end
