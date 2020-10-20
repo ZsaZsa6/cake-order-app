@@ -8,4 +8,4 @@ Description: <%= @order.description %> <br>
 <br>
 <%= button_to "Delete this Order", @order , method: :delete %>
 
-<%= link_to "Return to orders", '/orders' %><br>
+<%= link_to "Return to orders", customer_orders_path(current_customer) %><br>
