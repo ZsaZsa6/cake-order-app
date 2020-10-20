@@ -1,4 +1,6 @@
 
 <h3><%= "#{current_customer.username} Select the order you would like to see" %></h3>
-<%= 
-link_to @order.description, 'orders/show'  %>
+<%= @orders.each do | @order | %>
+<%= @order.description, customer_order_path(@order) %>
+<% end %>
+

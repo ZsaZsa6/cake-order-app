@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :logged_in?, :current_customer, :authorized, :username
+    helper_method :logged_in?, :current_customer, :authorized
 
     def index
       if logged_in?
@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
   
     def current_customer
       if session[:customer_id]
-        @current_customer = Customer.find(session[:customer_id])
+       Customer.find(session[:customer_id])
+      else
+        redirect_to login_path
       end
     end 
       
