@@ -4,7 +4,7 @@ Description: <%= @order.description %> <br>
 <h3> Filling: <%= @order.cake.fillings%><br>
 <h3> Frosting: <%= @order.cake.frosting%><br>
 <h3> Size: <%= @order.cake.size%> inches 
-<%= link_to "Edit this Order", edit_order_path %><br>
+<%= button_to "Edit this Order", @order, method: :patch %><br>
 <br>
 <%= button_to "Delete this Order", @order, method: :delete %>
 
