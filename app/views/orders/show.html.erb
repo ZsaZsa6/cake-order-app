@@ -4,9 +4,8 @@ Description: <%= @order.description %> <br>
 <h3> Filling: <%= @order.cake.fillings%><br>
 <h3> Frosting: <%= @order.cake.frosting%><br>
 <h3> Size: <%= @order.cake.size%> inches 
-<%= button_to "Edit this Order", @order, method: :patch %><br>
+<%= link_to "Edit this Order", edit_order_path %><br>
 <br>
-<%= button_to "Delete this Order", @order, method: :delete %>
+<%= button_to "Delete this Order", @order , method: :delete %>
 
-<%= link_to "Add this Order to your Cart" %><br>
 <%= link_to "Return to orders", '/orders' %><br>

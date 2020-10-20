@@ -5,12 +5,12 @@ class OrdersController < ApplicationController
     end
 
     def index
-       @order = Order.find_by(customer_id: [current_customer.id])
+       @orders = current_customer.orders
         
     end
 
     def show
-        @order = Order.find(params[:id])
+        @order = Order.find_by(customer_id: [current_customer.id])
     end
 
     def create 
@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     end
 
     def edit
-        @order = Order.find(params[:id])
+        order = Order.find(params[:id])
     end
     
     def update
