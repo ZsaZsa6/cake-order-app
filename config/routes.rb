@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   resources :customers 
 
   resources :customers do
-      resources :orders, only: [:index]
+      resources :orders, only: [:index, :new]
   end
-  resources :orders, only: [:new, :show, :create, :edit, :update, :destroy]
+  resources :orders, only: [:show, :create, :edit, :update, :destroy]
   resources :cakes
   
-
 end
