@@ -32,7 +32,7 @@ class CakesController < ApplicationController
     end
 
     def cake_params
-      params.require(:cake).permit(:tiers, :flavors, :fillings, :frosting, :size)
+      params.require(:cake).permit(:tiers, :flavors, :fillings, :frosting, :size, :title)
     end  
     
 end
