@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     end
 
     def show
-        @order = Order.find_by(customer_id: [current_customer.id])
+        @order = Order.find_by(id: params[:id])
     end
 
     def create 

@@ -5,9 +5,10 @@ Description: <%= @order.description %> <br>
 <h3> Flavor: <%= @order.cake.flavors%><br>
 <h3> Filling: <%= @order.cake.fillings%><br>
 <h3> Frosting: <%= @order.cake.frosting%><br>
-<h3> Size: <%= @order.cake.size%> inches 
+<h3> Size: <%= @order.cake.size%> inches <br>
 <%= link_to "Edit this Order", edit_order_path %><br>
 <br>
-<%= button_to "Delete this Order", @order , method: :delete %>
+<%= button_to "Delete this Order", @order, method: :delete %><br>
 
 <%= link_to "Return to orders", customer_orders_path(current_customer) %><br>
+<%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>
