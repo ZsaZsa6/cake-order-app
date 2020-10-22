@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_205232) do
+ActiveRecord::Schema.define(version: 2020_10_22_025930) do
 
   create_table "cakes", force: :cascade do |t|
     t.integer "tiers"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_205232) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
+    t.integer "order_id"
   end
 
   create_table "customers", force: :cascade do |t|

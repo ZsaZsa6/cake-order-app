@@ -9,9 +9,9 @@ Customer.destroy_all
 Cake.destroy_all
 Order.destroy_all
 ronda = Customer.create(username: "ronda", password: 'pw', email: 'rdc@gmail.com')
-cake1 = Cake.create(tiers: 1, flavors: "chocolate", fillings: "cookies and cream", frosting: "vanilla", size: 9, title: "Birthday cake")
 order1 = Order.create(description: "birthday cake", customer_id: ronda.id)
-cake2 = Cake.create(tiers: 2, flavors: "vanilla", fillings: "maple", frosting: "maple", size: 10, title: "Anniversary Cake")
+cake1 = Cake.create(tiers: 1, flavors: "chocolate", fillings: "cookies and cream", frosting: "vanilla", size: 9, title: "Birthday cake", order_id: order1.id)
 order2 = Order.create(description: "anniversary and birthday cakes", customer_id: ronda.id)
-cake3 = Cake.create(tiers: 1, flavors: "strawberry", fillings: "strawberry", frosting: "vanilla", size: 12, title: "4th Birthday Cake")
+cake2 = Cake.create(tiers: 2, flavors: "vanilla", fillings: "maple", frosting: "maple", size: 10, title: "Anniversary Cake", order_id: order2.id)
+cake3 = Cake.create(tiers: 1, flavors: "strawberry", fillings: "strawberry", frosting: "vanilla", size: 12, title: "4th Birthday Cake", order_id: order2.id)
 

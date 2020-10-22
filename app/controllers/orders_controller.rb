@@ -11,7 +11,9 @@ class OrdersController < ApplicationController
     end
 
     def show
+        
         @order = Order.find_by(id: params[:id])
+        
     end
 
     def create 
@@ -40,7 +42,7 @@ class OrdersController < ApplicationController
     
     private
     def order_params
-        params.require(:order).permit(:cake_id, :description, :customer_id)
+        params.require(:order).permit(:description, :customer_id)
     end 
      
     
