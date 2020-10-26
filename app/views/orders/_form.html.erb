@@ -5,3 +5,5 @@
     <%= f.text_field :description, list: 'order-description' %><br><br>
     <%= f.submit %>
     <% end %>
+   <%= render partial: 'cakes/cake', locals: {cake: @cake} %>
+   

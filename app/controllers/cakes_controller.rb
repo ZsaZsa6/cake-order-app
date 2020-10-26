@@ -12,7 +12,7 @@ class CakesController < ApplicationController
     end
     def edit
         
-        @cake = Cake.find(params[:id])
+        @cake = Cake.find_by(params[:id])
     end
     def update
         cake = Cake.find(params[:id])
@@ -28,7 +28,7 @@ class CakesController < ApplicationController
 
     private
     def set_cake
-       @cake = Cake.find(params[:id])
+       @cake = Cake.find_by(params[:id])
     end
 
     def cake_params

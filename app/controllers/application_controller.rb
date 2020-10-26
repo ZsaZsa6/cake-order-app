@@ -15,6 +15,14 @@ class ApplicationController < ActionController::Base
        Customer.find(session[:customer_id])
       end
     end 
+    
+    def current_cake_order
+      if logged_in?
+        @cake_order = customer.cake_order
+      else
+        redirect_to login_path
+      end 
+    end
       
     def logged_in?
       !!current_customer
