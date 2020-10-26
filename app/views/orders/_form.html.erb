@@ -1,9 +1,14 @@
-<h3> Please make a detailed description for your order. </h3>
- 
- <%= form_for @order do |f| %>
-    <%= f.label :description %>
-    <%= f.text_field :description, list: 'order-description' %><br><br>
-    <%= f.submit %>
-    <% end %>
-   <%= render partial: 'cakes/cake', locals: {cake: @cake} %>
+
+
+Description: <%= @order.description %> <br>
+<%= @order.cakes.each do |cake|  %>
+<h3>Cake Title: <%= cake.title %>
+<h3>Number of tiers: <%= cake.tiers %><br>
+<h3> Flavor: <%= cake.flavors%><br>
+<h3> Filling: <%= cake.fillings%><br>
+<h3> Frosting: <%= cake.frosting%><br>
+<h3> Size: <%= cake.size%> inches <br></h3>
+<br><%= link_to "Edit this cake", edit_cake_path %><br>
+<% end %>
+
    

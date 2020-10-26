@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     
     def current_cake_order
       if logged_in?
-        @cake_order = customer.cake_order
+        @cakes_orders = customer.cakes_orders
       else
         redirect_to login_path
       end 
