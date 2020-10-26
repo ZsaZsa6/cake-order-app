@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :logged_in?, :current_customer, :authorized, :username
+    helper_method :logged_in?, :current_customer, :authorized, :username, :current_cake_order
 
     def index
       if logged_in?
