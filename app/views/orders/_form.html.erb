@@ -4,11 +4,11 @@ Description: <%= @order.description %> <br>
 <%= @order.cakes.each do |cake|  %>
 <h3>Cake Title: <%= cake.title %>
 <h3>Number of tiers: <%= cake.tiers %><br>
-<h3> Flavor: <%= cake.flavors%><br>
-<h3> Filling: <%= cake.fillings%><br>
-<h3> Frosting: <%= cake.frosting%><br>
-<h3> Size: <%= cake.size%> inches <br></h3>
-<br><%= link_to "Edit this cake", edit_cake_path %><br>
+
 <% end %>
+<%= tiers.times do %>
+   <%= render partial 'tiers' , locals: [cake: @cake] %>
+   <% end %>
+
 
    

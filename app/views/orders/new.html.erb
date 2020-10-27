@@ -5,24 +5,11 @@
     <%= f.text_field :description, list: 'order-description' %><br><br>
     <%= f.submit %>
     <% end %>
+    <%= render 'form' %>
 
-    <%= form_for @cake do |f| %>
-        <%= f.label "Cake Title" %>
-        <%= f.text_area :title %><br>
-        <%= f.label "Number of Tiers" %>
-        <%= f.text_area :tiers %><br>
-        
-        <%= f.label "Flavor of Cake Tier" %>
-        <%= f.text_area :flavors %><br>
-        <%= f.label "Flavor of Filling" %>
-        <%= f.text_area :fillings %><br>
-        <%= f.label "Frosting Flavor" %>
-        <%= f.text_area :frosting %><br>
-        <%= f.label "Size in inches" %>
-        <%= f.text_area :size %><br>
-        <%= f.submit %>
-        <% end %>
+       
 
-<%= render 'form' %>
+       
+
 
 
