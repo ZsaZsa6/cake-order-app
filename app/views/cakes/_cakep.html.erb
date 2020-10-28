@@ -1,10 +1,12 @@
 
 <%= form_for @cake do |f| %>
-<%= f.label "Flavor of Cake Tier" %>
-<%= f.text_area :flavors %><br>
-<%= f.label "Flavor of Filling" %>
-<%= f.text_area :fillings %><br>
-<%= f.label "Frosting Flavor" %>
-<%= f.text_area :frosting %><br>
-<%= f.label "Size in inches" %>
-<%= f.text_area :size %><br>
+    <%= f.label "Flavor of tier" %>
+    <%= f.text_area :flavors %><br>
+    <%= f.label "Flavor of filling" %>
+    <%= f.text_area :fillings %><br>  
+    <%= f.label "Tier size(inches)" %>
+    <%= f.text_area :size %><br>
+    <%= f.submit %>
+    <% end %>
+ 
+        

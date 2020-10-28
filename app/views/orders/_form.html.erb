@@ -4,11 +4,12 @@ Description: <%= @order.description %> <br>
 <%= @order.cakes.each do |cake|  %>
 <h3>Cake Title: <%= cake.title %>
 <h3>Number of tiers: <%= cake.tiers %><br>
-
-<% end %>
-<%= tiers.times do %>
-   <%= render partial 'tiers' , locals: [cake: @cake] %>
+<%= cakes.tiers.times do | integer | %>
+   <%= render partial: 'tiers', locals: [order: @order]%>
+  
+   <%= f.submit %>
    <% end %>
-
+   <% end %>
+ 
 
    
