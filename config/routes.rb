@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       resources :orders, only: [:index, :new]
   end
   resources :orders, only: [:show, :create, :edit, :update, :destroy]
-  resources :cakes
+  resources :orders do 
+    resources :cakes, only: [:new]
+  end
+  resources :cakes, only: [:show, :create, :edit, :update, :destroy]
+  resources :tiers
   
 end
