@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2020_10_26_194903) do
     t.integer "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
     t.integer "order_id"
   end
 
