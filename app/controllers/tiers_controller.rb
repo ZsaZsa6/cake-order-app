@@ -4,7 +4,8 @@ class TiersController < ApplicationController
     end
     def create
         @tier = Tier.create(tier_params)
-        redirect_to tier_path(@tier)
+        redirect_to tier_path(tier)
+        
     end
     def edit
         @tier = Tier.find_by(params[:id])

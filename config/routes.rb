@@ -6,15 +6,20 @@ Rails.application.routes.draw do
   
   
   resources :customers 
+  resources :orders, only: [:show, :create, :edit, :update, :destroy]
+  resources :cakes, only: [:new, :create, :edit, :update, :destroy]
+  resources :tiers, only: [:create, :edit, :update, :destroy]
 
   resources :customers do
       resources :orders, only: [:index, :new]
   end
-  resources :orders, only: [:show, :create, :edit, :update, :destroy]
+ 
   resources :orders do 
-    resources :cakes, only: [:new, :show]
+      resources :cakes, only: [:show]
   end
-  resources :cakes, only: [:create, :edit, :update, :destroy]
-  resources :tiers
+ 
   
+  resources :cakes do
+      resources :tiers, only: [:new]
+  end
 end

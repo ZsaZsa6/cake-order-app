@@ -1,0 +1,13 @@
+Tier Flavor: <%= @tier.flavor %>
+
+
+<=% form_for @tier.each do | f | %>
+    <%= f.label :flavor%>
+    <%= f.text_area :flavor %><br>
+    <%= f.label "Flavor of Filling" %>
+    <%= f.text_area :filling %><br>
+    <%= f.label "Frosting Flavor" %>
+    <%= f.text_area :frosting %><br>
+    <%= f.label "Size in inches" %>
+    <%= f.text_area :size %><br>
+    <%= f.submit %>
