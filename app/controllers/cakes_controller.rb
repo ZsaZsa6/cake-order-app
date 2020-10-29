@@ -4,7 +4,7 @@ class CakesController < ApplicationController
         @cake = Cake.new
     end
     def create
-        @cake = Cake.create(cake_params)
+        cake = Cake.create(cake_params)
         redirect_to '/tiers/new'
     end
     def show
