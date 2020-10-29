@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   end
   resources :orders, only: [:show, :create, :edit, :update, :destroy]
   resources :orders do 
-    resources :cakes, only: [:new]
+    resources :cakes, only: [:new, :show]
   end
-  resources :cakes, only: [:show, :create, :edit, :update, :destroy]
+  resources :cakes, only: [:create, :edit, :update, :destroy]
   resources :tiers
   
 end
