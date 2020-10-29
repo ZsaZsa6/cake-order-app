@@ -5,7 +5,7 @@ class CakesController < ApplicationController
     end
     def create
         @cake = Cake.create(cake_params)
-        redirect_to new_cake_tier_path(cake)
+        redirect_to '/tiers/new'
     end
     def show
         @cake = Cake.find_by(params[:id])
@@ -32,7 +32,7 @@ class CakesController < ApplicationController
     end
 
     def cake_params
-      params.require(:cake).permit(:title, :number_tiers)
+      params.require(:cake).permit(:title, :number_tiers, :order_id)
     end  
     
 end
