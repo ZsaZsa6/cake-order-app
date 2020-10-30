@@ -10,10 +10,11 @@ class CakesController < ApplicationController
     def show
         @cake = Cake.find_by(params[:id])
     end
-    def edit
-        
+    
+    def edit        
         @cake = Cake.find_by(params[:id])
     end
+
     def update
         cake = Cake.find(params[:id])
         cake.update(cake_params)
