@@ -8,6 +8,9 @@ class TiersController < ApplicationController
         redirect_to tier_path(@tier)
         
     end
+    def show
+        @tier = Tier.find_by(params[:id])
+    end
     def edit
         @tier = Tier.find_by(params[:id])
     end
