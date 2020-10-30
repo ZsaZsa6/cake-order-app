@@ -4,11 +4,12 @@ class CakesController < ApplicationController
         @cake = Cake.new
     end
     def create
-        cake = Cake.create(cake_params)
-        redirect_to :new_tier_path
+        @cake = Cake.create(cake_params)
+       render 'show'
+
     end
     def show
-        @cake = Cake.find_by(params[:id])
+       @cake = Cake.find_by(params[:id])
     end
     
     def edit        

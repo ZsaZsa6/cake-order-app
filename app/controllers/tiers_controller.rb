@@ -5,11 +5,11 @@ class TiersController < ApplicationController
     end
     def create
         @tier = Tier.create(tier_params)
-        redirect_to tier_path(@tier)
+        render 'show'
         
     end
     def show
-        @tier = Tier.find_by(params[:id])
+       @tier = Tier.find_by(params[:id]) 
     end
     def edit
         @tier = Tier.find_by(params[:id])
@@ -17,7 +17,7 @@ class TiersController < ApplicationController
     def update
         tier = Tier.find(params[:id])
         tier.update(tier_params)
-        redirect_to tier_path(tier)
+        redirect_to tiers_path(tier)
     end
     def destroy
         Tier.destroy(params[:id])
