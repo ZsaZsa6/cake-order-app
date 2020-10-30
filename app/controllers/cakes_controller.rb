@@ -1,5 +1,5 @@
 class CakesController < ApplicationController
-    # before_action :set_cake, only: [:edit, :update, :destroy]
+    before_action :set_cake, only: [:edit, :update, :destroy]
     def new
         @cake = Cake.new
     end
@@ -29,9 +29,9 @@ class CakesController < ApplicationController
     end
 
     private
-    # def set_cake
-    #    @cake = Cake.find_by(params[:id])
-    # end
+    def set_cake
+       @cake = Cake.find_by(params[:id])
+    end
 
     def cake_params
       params.require(:cake).permit(:title, :number_tiers, :order_id)
