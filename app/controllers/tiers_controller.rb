@@ -1,5 +1,5 @@
 class TiersController < ApplicationController
-    before_action :set_tier, only: [:edit, :update, :destroy]
+    
     def index
         @tiers = Tier.all
     end
@@ -27,9 +27,7 @@ class TiersController < ApplicationController
         redirect_to tiers_path
     end
     private
-    def set_tier
-        @tier = Tier.find_by(params[:id])
-    end
+    
     def tier_params
         params.require(:tier).permit(:flavor, :filling, :frosting, :size, :cake_id)
     end

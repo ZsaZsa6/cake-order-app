@@ -1,5 +1,10 @@
 <header>
   <h1>Edit <%= @order.description %></h1>
-</header>
+  <%= @order.cakes.each do |cake|  %>
+    <h3>Cake Title: <%= cake.title %><br>
+    <h3>Number of Tiers:<%= cake.number_tiers %><br>
+   <%= render 'cakes/cake' %>
 
-<%= render 'form' %>
+<br><%= link_to "Edit this Order", edit_cake_path(cake) %>
+<br><%= button_to "Delete this Order", @order, method: :destroy %>
+<% end %>
