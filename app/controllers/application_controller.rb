@@ -12,20 +12,12 @@ class ApplicationController < ActionController::Base
   
     def current_customer
       if session[:customer_id]
-       Customer.find(session[:customer_id])
-      else 
-        redirect_to login_path
+      current_customer = Customer.find(session[:customer_id])
+       
       end
     end 
     
-    # def current_order
-    #   if logged_in?
-    #     @current_order = customer.cakes_orders
-    #   else
-    #     redirect_to login_path
-    #   end 
-    # end
-      
+          
     def logged_in?
       !!current_customer
     end 

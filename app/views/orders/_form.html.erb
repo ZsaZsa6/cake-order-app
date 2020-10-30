@@ -1,11 +1,7 @@
-
-
 <h2>Description: <%= @order.description %></h2><br>
 <%= @order.cakes.each do |cake|  %>
 <h3>Cake Title: <%= cake.title %><br>
 <h3>Number of Tiers:<%= cake.number_tiers %><br>
-
-<%= submit_tag "Edit this cake" %>
-
+<br><%= button_to "Edit this Order", edit_order_path(@order), method: :get %>
+<br><%= button_to "Delete this Order", @order, method: :destroy %>
 <% end %>
- 

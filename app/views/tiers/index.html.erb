@@ -1,0 +1,12 @@
+Index
+<% @tiers.each do |tier| %>
+    <tr>
+      <td><%= tier.flavor %></td>
+      <td><%= tier.filling %></td>
+      <td><%= tier.frosting %></td>
+      <td><%= tier.size %></td>
+      <td><%= link_to "Show", tier %></td>
+      <td><%= link_to "Edit", edit_tier_path(tier) %></td>
+      <td><%= link_to "Destroy", tier, method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>

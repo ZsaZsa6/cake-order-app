@@ -1,5 +1,8 @@
 class TiersController < ApplicationController
     before_action :set_tier, only: [:edit, :update, :destroy]
+    def index
+        @tiers = Tier.all
+    end
     def new
         @tier = Tier.new
     end
