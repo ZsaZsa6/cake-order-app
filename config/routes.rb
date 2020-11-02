@@ -16,4 +16,7 @@ Rails.application.routes.draw do
     resources :cakes do 
         resources :tiers
     end
+  resources :orders do 
+    resources :cakes, only: [:show]
+  end
  end

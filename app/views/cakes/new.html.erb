@@ -1,5 +1,14 @@
 <h1> Make a new cake <h1>
 
+<%= form_for @cake do |f| %>
+    <%= f.label "Cake Title" %>
+    <%= f.text_area :title %><br>
+    <%= f.label "Number of Tiers" %>
+    <%= f.text_area :number_tiers %><br>
 
-<%= render 'cake' %>
+    <%= f.submit %>
+    <% end %>
+
+
+
 
