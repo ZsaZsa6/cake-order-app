@@ -1,12 +1,15 @@
 class CakesController < ApplicationController
-    # before_action :set_cake, only: [:show, :edit, :update, :destroy]
+    before_action :set_cake, only: [:show, :edit, :update, :destroy]
+    
     def new
-        @cake = Cake.new(id: params[:id])
+        @cake = Cake.new
     end
     def create
-        @cake = Cake.create(cake_params)
-        render 'show'
-    end
+       @cake = Cake.create(cake_params)
+       if @cake.save!
+        render 'new'
+       end        
+     end
     def show
        @cake = Cake.find_by(id: params[:id])
       
@@ -29,9 +32,9 @@ class CakesController < ApplicationController
     end
 
     private
-    # def set_cake
-    #    @cake = Cake.find_by(params[:id])
-    # end
+    def set_cake
+       @cake = Cake.find_by(params[:id])
+    end
 
     def cake_params
       params.require(:cake).permit(:title, :number_tiers, :order_id)

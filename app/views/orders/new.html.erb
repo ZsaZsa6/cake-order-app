@@ -3,6 +3,7 @@
 <%= form_for @order do |f| %>
     <%= f.label :description %>
     <%= f.text_field :description%><br><br>
+    <%= hidden_field_tag :customer_id, @customer.id %>
     <%= f.submit %>
     <% end %>
 

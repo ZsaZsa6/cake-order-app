@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+    before_action :set_order, only: [:show, :edit, :update]
    
     def new 
         @order = Order.new(customer_id: [current_customer.id])
@@ -18,9 +19,11 @@ class OrdersController < ApplicationController
 
     def create 
        @order = Order.create(order_params)
-        
-        redirect_to  '/cakes/new'    
-        
+          if @order.save
+            render 'show'
+        else
+            render 'new'
+        end        
     end
 
     def edit
@@ -28,9 +31,9 @@ class OrdersController < ApplicationController
     end
     
     def update
-       order = Order.find(params[:id])
-       order.update(order_params)
-       redirect_to order_path(order)         
+       @order = Order.find(params[:id])
+       @order.update(order_params)
+       redirect_to order_path(@order)         
     end
 
     def destroy
@@ -41,9 +44,15 @@ class OrdersController < ApplicationController
     
     
     private
+   
     def order_params
         params.require(:order).permit(:description, :customer_id)
     end 
+
+    def set_order
+        @order = Order.find(params[:id])
+    end
+    
      
     
 end
