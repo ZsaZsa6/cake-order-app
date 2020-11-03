@@ -19,11 +19,11 @@ class OrdersController < ApplicationController
 
     def create 
        @order = Order.create(order_params)
-          if @order.save
-            render 'show'
-        else
-            render 'new'
-        end        
+       if @order.save
+        render 'show'
+       else   
+        render 'new'
+       end
     end
 
     def edit

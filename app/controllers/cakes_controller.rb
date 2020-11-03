@@ -6,9 +6,8 @@ class CakesController < ApplicationController
     end
     def create
        @cake = Cake.create(cake_params)
-       if @cake.save!
-        render 'new'
-       end        
+        render 'show'
+       
      end
     def show
        @cake = Cake.find_by(id: params[:id])
