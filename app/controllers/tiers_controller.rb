@@ -8,6 +8,7 @@ class TiersController < ApplicationController
     end
     def create
         @tier = Tier.create(tier_params)
+        if @tier.save
         render 'show'
         
     end

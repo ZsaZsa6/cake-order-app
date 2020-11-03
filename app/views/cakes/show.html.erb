@@ -3,8 +3,8 @@
 
 Cake Title: <%= @cake.title%><br>
 Number of Tiers: <%= @cake.number_tiers %><br>
-
+<%= hidden_field_tag(:cake_id) %>
 <%= submit_tag %>
 <%= link_to "Return to orders", customer_orders_path(current_customer) %><br>
 <%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>
-<%= link_to "Continue with this order", new_cake_tier_path(:cake_id, :value => @cake.id)%><br>
+<%= link_to "Continue with this order", new_cake_tier_path %><br>
