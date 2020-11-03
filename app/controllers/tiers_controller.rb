@@ -10,6 +10,7 @@ class TiersController < ApplicationController
         @tier = Tier.create(tier_params)
         if @tier.save
         render 'show'
+        end
         
     end
     def show

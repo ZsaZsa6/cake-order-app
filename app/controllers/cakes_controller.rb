@@ -1,12 +1,12 @@
 class CakesController < ApplicationController
     before_action :set_cake, only: [:show, :edit, :update, :destroy]
-    
+    before_action :set_order, only: [:new, :create]
     def new
-        @cake = Cake.new
+        @cake = @order.cakes.build
     end
     def create
-       @cake = Cake.create(cake_params)
-       if @cake.save
+       @cake = @order.cakes.build(cake_params)
+       if @cake.save!
         render 'show'
        end
      end
@@ -34,6 +34,10 @@ class CakesController < ApplicationController
     private
     def set_cake
        @cake = Cake.find_by(params[:id])
+    end
+
+    def set_order
+        @order = Order.find_by(params[:order_id])
     end
 
     def cake_params
