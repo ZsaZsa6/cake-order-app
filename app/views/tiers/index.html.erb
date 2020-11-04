@@ -1,12 +1,14 @@
-Index
+<h1>Index of tiers</h1>
+
 <% @tiers.each do |tier| %>
-    <tr>
-      <td><%= tier.flavor %></td>
-      <td><%= tier.filling %></td>
-      <td><%= tier.frosting %></td>
-      <td><%= tier.size %></td>
-      <td><%= link_to "Show", tier %></td>
-      <td><%= link_to "Edit", edit_tier_path(tier) %></td>
-      <td><%= link_to "Destroy", tier, method: :delete, data: { confirm: "Are you sure?" } %></td>
+    <h4>
+      <%= tier.flavor %><br>
+      <%= tier.filling %><br>
+      <%= tier.frosting %><br>
+      <%= tier.size %> inches<br>
+      </h4>
+      <%= link_to "Show", tier %>
+      <%= link_to "Edit", edit_tier_path(tier) %>
+      <%= link_to "Destroy", tier, method: :delete, data: { confirm: "Are you sure?" } %>
     </tr>
   <% end %>

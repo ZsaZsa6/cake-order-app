@@ -8,7 +8,7 @@ class TiersController < ApplicationController
     end
     def create
         @tier = @cake.tiers.build(tier_params)
-        if @tier.save
+        if @tier.save!
         render 'show'
         end
        
