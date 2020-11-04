@@ -1,7 +1,7 @@
 class TiersController < ApplicationController
     before_action :set_cake
     def index
-        @tiers = Tier.all
+        @tiers = @cake.tiers.all
     end
     def new
         @tier = @cake.tiers.build           
