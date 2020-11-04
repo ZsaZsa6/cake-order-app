@@ -1,12 +1,12 @@
 <%= form_for @tier do |f| %>
     <%= f.label "Tier Flavor" %>
-    <%= f.text_area :flavor %><br>
-    <%= f.label "Frosting" %>
-    <%= f.text_area :frosting %><br>
+    <%= f.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
+    <%= f.label "Frosting" %> 
+    <%= f.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
     <%= f.label "Filling" %>
-    <%= f.text_area :filling %><br>
+    <%= f.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
     <%= f.label "Tier size in inches"%>
-    <%= f.text_area :size %><br>
+    <%= f.number_field :size, in: 4...21, step: 2 %><br>
     
     <%= f.submit %>
     <% end %>

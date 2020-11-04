@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
     private
    
     def order_params
-        params.require(:order).permit(:description, :customer_id)
+        params.require(:order).permit(:description, :customer_id, cakes_attributes: [:id, :title, :number_tiers])
     end 
 
     def set_order
