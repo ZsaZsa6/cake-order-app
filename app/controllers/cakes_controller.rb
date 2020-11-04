@@ -6,7 +6,7 @@ class CakesController < ApplicationController
     end
     def create
        @cake = @order.cakes.build(cake_params)
-       if @cake.save!
+       if @cake.save
         render 'show'
        end
      end
