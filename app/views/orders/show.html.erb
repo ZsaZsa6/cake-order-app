@@ -1,10 +1,18 @@
 <h3> This order </h3>
-<%= form_for @order do |f| %>
-    <%= f.label :description %>
-    <%= f.text_field :description, list: 'order-description' %><br>
-    <%= f.submit "Update description"  %>
-    <% end %>
+<p>
+  <strong>Order Description: </strong>
+  <%= @order.description %>
+</p>
     
-<%= link_to "Return to orders", customer_orders_path(current_customer) %><br>
-<%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>
-<%= link_to "Continue with this order", new_cake_path %><br>
+# <h2>Cakes</h2>
+# <% for cakes in @order.cakes %>
+#     <ul>
+#     <li><%= cake.title %></li>
+#     <li><%= cake.number_tiers %></li>
+
+#     </ul>
+# <% end %>
+
+# <%= link_to 'Edit Order', edit_order_path(@order) %> 
+# <%= link_to 'Add Cake', order_cakes_path(@order) %> 
+# <%= link_to 'Back', orders_path %>

@@ -1,4 +1,4 @@
-<%= form_with(model: [@order, cake], local: true) do |f| %>
+<%= form_with do |f| %>
     <%= f.label "Description of order: " %><br>
     e.g. Carla's bridal and groom's cake
     <br><%= f.text_area :description%><br><br>

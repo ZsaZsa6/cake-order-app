@@ -28,7 +28,6 @@ class CakesController < ApplicationController
     def update
         if @cake.update(cake_params)
             redirect_to order_cake_path(@order)
-        cake.update(cake_params)
         else
             render :edit
         end

@@ -1,11 +1,11 @@
 
-<%= form_with(model: [@order, fake], lofal: true) do |f| %>
+<%= form_with(model: [@order, cake], local: true) do |f| %>
     <%= f.label "Title of cake:" %><br>
     e.g. Bridal cake
    <br><%= f.text_field :title %><br>
     <br><%= f.label "Number of tiers on cake:" %><br>
     <br><%= f.number_field :number_tiers, in: 1...10 %><br>  
-    <%= f.submit %>
+    <%= button_to "Create order", orders_path(@order) %> 
     <% end %>
   
    
