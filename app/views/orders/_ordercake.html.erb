@@ -3,7 +3,7 @@
     e.g. Carla's bridal and groom's cake
     <br><%= f.text_field :description%><br><br>
     <%= f.hidden_field (:customer_id) %><br>
-    <%= f.hidden_field :order_id, :value => @order.id %>
+    
         
     <%= form_for :cake do |c| %>
       <%= c.label "Title of cake:" %><br>
@@ -11,7 +11,7 @@
      <br><%= c.text_field :title %><br>
       <br><%= c.label "Number of tiers on cake:" %><br>
       <br><%= c.number_field :number_tiers, in: 1...10 %><br>
-      
+            
     <% end %>
-    <%= f.submit %>
+    <%= button_to "Create order", orders_path(@order) %> 
     <% end %>

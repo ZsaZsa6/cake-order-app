@@ -4,14 +4,7 @@
     <%= f.text_field :description, list: 'order-description' %><br>
     <%= f.submit "Update description"  %>
     <% end %>
-    <% @order.cakes.each do |cake|  %>
-        <h3>Cake Title: <%= cake.title %><br>
-        <h3>Number of Tiers:<%= cake.number_tiers %><br>
-        
-        <br><%= link_to "Edit this Order", edit_cake_path(cake) %>
-        <br><%= button_to "Delete this Order", @order, method: :destroy %>
-    <% end %>
-<br>
+    
 <%= link_to "Return to orders", customer_orders_path(current_customer) %><br>
 <%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>
 <%= link_to "Continue with this order", new_cake_path %><br>

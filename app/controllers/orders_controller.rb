@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
    
     def new 
         @order = Order.new(customer_id: [current_customer.id])
-        @order.cakes.build
     end
 
     def index
