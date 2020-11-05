@@ -1,11 +1,10 @@
 
-<%= form_for @cake do |f| %>
-    <%= f.label "Cake Title" %>
-    <%= f.text_area :title %><br>
-    <%= f.label "Number of Tiers" %>
-    <%= f.number_field :number_tiers %><br> 
-    <%= f.hidden_field (:order_id) %>
-        
+<%= form_with(model: [@order, fake], lofal: true) do |f| %>
+    <%= f.label "Title of cake:" %><br>
+    e.g. Bridal cake
+   <br><%= f.text_field :title %><br>
+    <br><%= f.label "Number of tiers on cake:" %><br>
+    <br><%= f.number_field :number_tiers, in: 1...10 %><br>  
     <%= f.submit %>
     <% end %>
   
