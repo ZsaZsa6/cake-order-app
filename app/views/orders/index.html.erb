@@ -1,7 +1,8 @@
 
 <h3><%= "#{current_customer.username} Select the order you would like to view" %></h3>
 <% @orders.each do | order | %>
-<%= link_to order.description, order_path(order) %><br>
+<%= order.description %>
+<%= link_to "See more about this order", order_cake_path(order_id) %><br>
 
 <% end %>
 <br><%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>

@@ -2,40 +2,40 @@ class CakesController < ApplicationController
     before_action :set_order
     before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
-    def index
-        @cakes = @order.cakes
-    end
+    # def index
+    #     @cakes = @order.cakes
+    # end
 
     def new
-        @cake = @order.cakes.build
+       @cake = Cake.new
     end
     def create
-       @cake = @order.cakes.build(cake_params)
+       @cake = Cake.new(cake_params)
        if @cake.save
-        redirect_to order_cakes_path(@order)
+        render 'show'
        else 
-        render :new
+        render 'new'
        end
      end
     def show
-           
+        @cake = Cake.find_by(params[:id])
     end
     
-    def edit        
+    def edit
+        @cake = Cake.find_by(params[:id])        
         
     end
 
     def update
-        if @cake.update(cake_params)
-            redirect_to order_cake_path(@order)
-        else
-            render :edit
+        cake = Cake.find(params[:id])
+        if cake.update(cake_params)
+        render 'cakes_path(cake)'
         end
     end
 
     def destroy
-        @cake.destroy
-        redirect_to order_cakes_path(@order)
+        Cake.destroy(params[:id])
+        redirect_to cakes_path
     end
 
     private

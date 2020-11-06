@@ -1,18 +1,18 @@
 <h3> This order </h3>
 <p>
-  <strong>Order Description: </strong>
+  Order Description: 
   <%= @order.description %>
 </p>
     
-# <h2>Cakes</h2>
-# <% for cakes in @order.cakes %>
-#     <ul>
-#     <li><%= cake.title %></li>
-#     <li><%= cake.number_tiers %></li>
+<h2>Cakes</h2>
+<% @order.cakes.each do |cake| %>
+    <ul>
+    Cake Title: <li><%= cake.title %></li>
+    Number of Tiers: <li><%= cake.number_tiers %></li>
 
-#     </ul>
-# <% end %>
+    </ul>
+<% end %>
 
-# <%= link_to 'Edit Order', edit_order_path(@order) %> 
-# <%= link_to 'Add Cake', order_cakes_path(@order) %> 
-# <%= link_to 'Back', orders_path %>
+<%= link_to 'Edit Order', edit_order_path(@order) %> 
+<%= link_to 'Add Cake', order_cakes_path(@order) %> 
+<%= link_to 'Back', orders_path %>
