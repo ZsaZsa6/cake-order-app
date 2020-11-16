@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
     def index
         
        @orders = current_customer.orders
-       
+       order_id = Order.find_by(params[:id])
+    
     
     end
 

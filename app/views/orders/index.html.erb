@@ -2,7 +2,7 @@
 <h3><%= "#{current_customer.username} Select the order you would like to view" %></h3>
 <% @orders.each do | order | %>
 <%= order.description %>
-<%= hidden_field_tag(:order_id, :value => order.id) %>
+<%= hidden_field_tag(:order_id, value: order[:id]) %>
 <%= link_to "See more about this order", order_cake_path(order) %><br>
 
 <% end %>
