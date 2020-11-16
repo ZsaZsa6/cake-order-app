@@ -17,9 +17,10 @@ class OrdersController < ApplicationController
     end
 
     def create 
-       @order = @order.cakes.build(order_params)
+       @order = Order.new(order_params)
+       
        if @order.save!
-        render 'show'
+        redirect_to order_cakes_path(@order)
        end
     end
 

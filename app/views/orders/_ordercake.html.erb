@@ -1,11 +1,11 @@
-<%= form_for :order do |f| %>
+<%= form_with model: @order do |f| %>
     <%= f.label "Description of order: " %><br>
     e.g. Carla's bridal and groom's cake
     <br><%= f.text_area :description%><br><br>
     <%= f.hidden_field (:customer_id) %><br>
     
         
-    <%= form_for :cake do |c| %>
+    <%= form_with model: @cake do |c| %>
       <%= c.label "Title of cake:" %><br>
       e.g. Bridal Cake
      <br><%= c.text_field :title %><br>
@@ -14,5 +14,5 @@
       
             
     <% end %>
-    <%= link_to "Create order", new_order_path(@order) %> 
+    <%= button_to "Create order", order_cake_path, method: :post %> 
     <% end %>
