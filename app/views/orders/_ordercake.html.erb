@@ -1,18 +1,21 @@
-<%= form_with model: @order do |f| %>
+<%= form_for @order do |f| %>
+
     <%= f.label "Description of order: " %><br>
     e.g. Carla's bridal and groom's cake
     <br><%= f.text_area :description%><br><br>
     <%= f.hidden_field (:customer_id) %><br>
+    Cakes in order:
     
-        
-    <%= form_with model: @cake do |c| %>
-      <%= c.label "Title of cake:" %><br>
-      e.g. Bridal Cake
-     <br><%= c.text_field :title %><br>
-      <br><%= c.label "Number of tiers on cake:" %><br>
-      <br><%= c.number_field :number_tiers, in: 1...10 %><br>
+    <%= f.fields_for :cakes do |cake| %>
       
-            
+        <br><%= cake.label :title %><br>
+        <br><%= cake.text_field :title %><br>
+    
+        <%= cake.label :number_tiers %>
+        <%= cake.number_field :number_tiers, in: 1...10 %>
+   
     <% end %>
-    <%= button_to "Create order", order_cake_path, method: :post %> 
+    
+  
+    <%= button_to "Create order", orders_path, method: :post %> 
     <% end %>

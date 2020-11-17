@@ -1,10 +1,18 @@
 
-<h1> Your Cake </h1>
-
-Cake Title: <%= @cake.title%><br>
-Number of Tiers: <%= @cake.number_tiers %><br>
-# <%= hidden_field_tag(:cake_id) %>
-<%= link_to "Continue with this order", new_cake_tier_path(@cake) %><br>
+<h1> Your Order </h1>
+<br><% @orders.each do |order| %>
+    Order Description:
+    <br><%= order.description %><br>
+    
+    
+    <% @order.cakes.each do | cake | %>
+    Cake Title:   <%= cake.title %><br>
+    Number of Tiers: <%= cake.number_tiers %><br>
+    
+    
+<%= link_to "Design your cake ", new_cake_tier_path(@cake) %><br>
 <%= link_to "Return to orders", customer_orders_path(current_customer) %><br>
 <%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>
+<% end %>
+<% end %>
 

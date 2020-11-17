@@ -1,5 +1,6 @@
 class CakesController < ApplicationController
     before_action :set_order
+    before_action :set_orders
     before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
     # def index
@@ -42,6 +43,9 @@ class CakesController < ApplicationController
    
     def set_order
         @order = Order.find(params[:order_id])
+    end
+    def set_orders 
+        @orders = current_customer.orders 
     end
     def set_cake
         @cake = @order.cakes.find(params[:id])

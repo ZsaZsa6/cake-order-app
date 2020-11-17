@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
    
     def new 
         @order = Order.new(customer_id: [current_customer.id])
-       @order.cakes.build
+        2.times {@order.cakes.build}
         
     end
 
@@ -13,14 +13,13 @@ class OrdersController < ApplicationController
        @orders = current_customer.orders
        order_id = Order.find_by(params[:id])
     
-    
     end
 
-    def create 
-       @order = Order.new(order_params)
-       
+    def create
+       @order = Order.new
+      
        if @order.save!
-        redirect_to order_cakes_path(@order)
+        render order_cake_path(@order)
        end
     end
 
