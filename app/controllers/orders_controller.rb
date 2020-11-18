@@ -1,18 +1,18 @@
 class OrdersController < ApplicationController
    before_action :set_order, only: [:show, :edit, :update, :destroy]
 
-   
-    def new 
-        @order = Order.new(customer_id: [current_customer.id])
-        2.times {@order.cakes.build}
-        
-    end
 
-    def index
+     def index
         
        @orders = current_customer.orders
        order_id = Order.find_by(params[:id])
     
+    end
+    
+    def new 
+        @order = Order.new(customer_id: [current_customer.id])
+        2.times {@order.cakes.build}
+        
     end
 
     def create

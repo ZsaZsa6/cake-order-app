@@ -9,10 +9,11 @@ class CakesController < ApplicationController
     end
 
     def new
-       @cake = Cake.new
+       @cake = @order.cakes.build
     end
+    
     def create
-       @cake = Cake.new(cake_params)
+       @cake = @order.cakes.build(cake_params)
        if @cake.save
         render 'show'
        else 
@@ -36,7 +37,7 @@ class CakesController < ApplicationController
     end
 
     def destroy
-        Cake.destroy(params[:id])
+        @cake.destroy
         redirect_to cakes_path
     end
 

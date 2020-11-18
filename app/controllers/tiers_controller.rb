@@ -1,14 +1,15 @@
 class TiersController < ApplicationController
     before_action :set_cake
     def index
-        @cake = Cake.find(params[:cake_id])
+        @cake = Cake.find_by(params[:cake_id])
         @tiers = @cake.tiers
     end
     def new
-        @tier = Tier.new          
+        @tier = Tier.new(cake_id: [@cake.id])
+          
     end
     def create
-        @tier = Tier.new(tier_params)
+        @tier = @cake.tiers.build(tier_params)
         if @tier.save!
         render 'show'
         end
@@ -23,7 +24,7 @@ class TiersController < ApplicationController
     def update
         tier = Tier.find(params[:id])
         tier.update(tier_params)
-        redirect_to tiers_path(tier)
+        render tiers_path(tier)
     end
     def destroy
         Tier.destroy(params[:id])
