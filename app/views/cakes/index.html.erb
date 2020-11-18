@@ -1,5 +1,15 @@
 
-    <h3>Order Description: <%= @order.description %></h3>
-    <h3>Cake Title: <%= cake.title %><br>
-    <h3>Number of Tiers:<%= cake.number_tiers %></h3><br>
+    <h1> Your Order </h1>
+
+    Order Description:
+    <br><%= @order.description %><br>
+        
+    <% @cakes.each do | cake | %>
+    Cake Title:   <%= cake.title %><br>
+    Number of Tiers: <%= cake.number_tiers %><br>
     
+    
+<%= link_to "Design your cake ", new_cake_tier_path(@cake) %><br>
+<%= link_to "Return to orders", customer_orders_path(current_customer) %><br>
+<%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>
+<% end %>

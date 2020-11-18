@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create", as: "session"
   delete '/sessions', to: "sessions#destroy", as: "logout"
-  delete '/orders', to: "orders#destroy", as: "destroy_order"
-  
+   
   
   resources :customers
-  resources :orders, only: [:create, :edit, :update, :destroy]
+  # resources :orders, only: [:create, :edit, :update, :destroy]
   resources :cakes
   resources :tiers
 

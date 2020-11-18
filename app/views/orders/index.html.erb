@@ -14,7 +14,8 @@ Order Description: <%= order.description %><br>
 
 
 <br><%= link_to "Create a new order", new_customer_order_path(current_customer) %><br>
-<br><%= link_to "Delete this order", destroy_order_path(@order), method: :delete %><br>
+<br><%= link_to "Delete this order", order_path(order), method: :delete %><br>
+
 <%= link_to "Logout", logout_path, method: :delete %><br>
 <% end %>
 <% end %>

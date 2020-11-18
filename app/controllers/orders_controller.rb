@@ -16,10 +16,10 @@ class OrdersController < ApplicationController
     end
 
     def create
-       @order = Order.new
+       @order = current_customer.orders.build(order_params)
       
        if @order.save!
-        render order_cake_path(@order)
+        redirect_to order_cakes_path(@order)
        end
     end
 
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
     end
 
     def destroy
-        Order.destroy(params[:id])
+        @order.destroy
         redirect_to orders_path
     end
 
@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
         params.require(:order).permit(:description, :customer_id, cake_attributes: [:title, :number_tiers])
     end 
     def set_order
-        @order = Order.find(params[:order_id])
+        @order = Order.find(params[:id])
     end
     
 end

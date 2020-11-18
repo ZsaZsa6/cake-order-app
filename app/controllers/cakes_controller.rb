@@ -3,9 +3,10 @@ class CakesController < ApplicationController
     before_action :set_orders
     before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
-    # def index
-    #     @cakes = @order.cakes
-    # end
+    def index
+        @order = Order.find(params[:order_id])
+        @cakes = @order.cakes
+    end
 
     def new
        @cake = Cake.new

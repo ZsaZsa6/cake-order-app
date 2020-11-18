@@ -7,12 +7,12 @@
 <h2>Cakes</h2>
 <% @order.cakes.each do |cake| %>
     <ul>
-    Cake Title: <li><%= cake.title %></li>
-    Number of Tiers: <li><%= cake.number_tiers %></li>
+    Cake Title: <li><%= @order.cake.title %></li>
+    Number of Tiers: <li><%= @order.cake.number_tiers %></li>
 
     </ul>
-<% end %>
 
+    <% end %>
 <%= link_to 'Edit Order', edit_order_path(@order) %> 
-<%= link_to 'Add Cake', order_cakes_path(@order) %> 
+ 
 <%= link_to 'Back', orders_path %>
