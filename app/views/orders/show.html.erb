@@ -2,11 +2,12 @@
 <p>
   Order Description: 
   <%= @order.description %>
-</p>
+
     
 <h2>Cakes</h2>
 <% @order.cakes.each do |cake| %>
     <ul>
+    
     Cake Title: <li><%= @order.cake.title %></li>
     Number of Tiers: <li><%= @order.cake.number_tiers %></li>
 

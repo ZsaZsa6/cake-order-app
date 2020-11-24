@@ -17,9 +17,9 @@ class OrdersController < ApplicationController
 
     def create
        @order = current_customer.orders.build(order_params)
-      
+       byebug
        if @order.save!
-        redirect_to order_cakes_path(@order)
+        redirect_to new_cake_tier_path
        end
     end
 

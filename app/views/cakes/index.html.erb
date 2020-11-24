@@ -4,7 +4,7 @@
     Order Description:
     <br><%= @order.description %><br>
         
-    <% @cakes.each do | cake | %>
+    <% @order.cakes.each do | cake | %>
     Cake Title:   <%= cake.title %><br>
     Number of Tiers: <%= cake.number_tiers %><br>
     
