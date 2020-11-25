@@ -20,8 +20,8 @@ class OrdersController < ApplicationController
       @order = Order.new(order_params)
        
        if @order.save!
-        # byebug
-        redirect_to new_cake_tier_path(@order.cakes.first)
+        
+        redirect_to new_cake_tier_path(@order.cakes.last)
        end
     end
 
