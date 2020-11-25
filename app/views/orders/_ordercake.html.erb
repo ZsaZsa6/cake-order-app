@@ -6,17 +6,15 @@
     <%= f.hidden_field (:customer_id) %><br>
     Cakes in order:
     
-    <%= f.fields_for :cakes do |cake| %>
+    <%= f.fields_for :cakes do |cake_attributes| %>
       
-        <br><%= cake.label :title %><br>
-        <br><%= cake.text_field :title %><br>
+        <br><%= cake_attributes.label :title %><br>
+        <br><%= cake_attributes.text_field :title %><br>
     
-        <%= cake.label :number_tiers %>
-        <%= cake.number_field :number_tiers, in: 1...10 %>
-   
+        <%= cake_attributes.label :number_tiers %>
+        <%= cake_attributes.number_field :number_tiers, in: 1...10 %>
+        
     <% end %>
-    
-  
     <%= button_to "Create order", orders_path, method: :post %> 
     <% end %>
 

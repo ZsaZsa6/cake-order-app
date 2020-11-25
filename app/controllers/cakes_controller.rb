@@ -9,11 +9,11 @@ class CakesController < ApplicationController
     end
 
     def new
-       @cake = @order.cakes.build
+        @cake = Cake.new
     end
     
     def create
-       @cake = @order.cakes.build(cake_params)
+       @cake = Cake.create(cake_params)
        if @cake.save
         render 'show'
        else 

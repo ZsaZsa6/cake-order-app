@@ -11,15 +11,17 @@ class OrdersController < ApplicationController
     
     def new 
         @order = Order.new(customer_id: [current_customer.id])
-        2.times {@order.cakes.build}
+        @order.cakes.build
         
     end
 
     def create
-       @order = current_customer.orders.build(order_params)
-       byebug
+    
+      @order = Order.new(order_params)
+       
        if @order.save!
-        redirect_to new_cake_tier_path
+        # byebug
+        redirect_to new_cake_tier_path(@order.cakes.first)
        end
     end
 
@@ -46,7 +48,7 @@ class OrdersController < ApplicationController
     private
    
     def order_params
-        params.require(:order).permit(:description, :customer_id, cake_attributes: [:title, :number_tiers])
+        params.require(:order).permit(:description, :customer_id, cakes_attributes: [:id, :title, :number_tiers])
     end 
     def set_order
         @order = Order.find(params[:id])

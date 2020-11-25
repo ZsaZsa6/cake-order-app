@@ -5,8 +5,9 @@ class TiersController < ApplicationController
         @tiers = @cake.tiers
     end
     def new
+        ntiers = @cake.number_tiers
         @tier = Tier.new(cake_id: [@cake.id])
-        cake.number_tiers.times {@cake.tiers.build}
+        2.times {@cake.tiers.build}
     end
     def create
         @tier = @cake.tiers.build(tier_params)
