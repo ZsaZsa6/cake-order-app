@@ -5,11 +5,9 @@ class TiersController < ApplicationController
         @tiers = @cake.tiers
     end
     def new
-        # byebug
-        @tier = Tier.new(cake_id: [@cake.id])
-        t = params[:number_tiers]
-        byebug
-        @cake.tiers.build
+                
+        @tier = Tier.new(cake_id: @cake.id)
+        @cake.number_tiers.times {@cake.tiers.build}
        
     end
     def create
@@ -37,7 +35,7 @@ class TiersController < ApplicationController
     private
 
     def set_cake
-        @cake = Cake.find_by(params[:cake_id])
+        @cake = Cake.find_by(id: params[:cake_id])
     end
     
     def tier_params

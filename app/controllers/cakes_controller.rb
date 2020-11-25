@@ -44,7 +44,7 @@ class CakesController < ApplicationController
     private
    
     def set_order
-        @order = Order.find(params[:order_id])
+        @order = Order.find_by(id: params[:order_id])
     end
     def set_orders 
         @orders = current_customer.orders 

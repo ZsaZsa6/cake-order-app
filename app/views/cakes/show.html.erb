@@ -12,7 +12,7 @@ SHOW CAKES
     Number of Tiers: <%= cake.number_tiers %><br>
     
     
-<%= link_to "Design your cake ", new_cake_tier_path(@cake) %><br>
+<%= link_to "Design your cake ", new_cake_tier_path(@order.cakes.last) %><br>
 
 <% end %>
 
