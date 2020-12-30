@@ -1,0 +1,26 @@
+Customer
+
+  has_many :products
+    has_many :orders, through: :products
+
+
+Order
+    has_many :products
+    has_many :customers, through: :products
+
+Product
+    belongs_to :customer
+    belongs_to :order
+
+    ???Name??
+    ??Type??
+    ??Item??
+    How to pass through to select the correct product so the customer can customize it??
+
+Would these all need separate tables to be saved to an order? 
+Cakes
+
+Cupcakes
+
+Cookies
+

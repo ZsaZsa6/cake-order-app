@@ -1,5 +1,5 @@
 class TiersController < ApplicationController
-    before_action :set_cake
+    before_action :set_cake, only: [:index, :new, :create]
     def index
         @cake = Cake.find_by(params[:cake_id])
         @tiers = @cake.tiers
@@ -10,13 +10,8 @@ class TiersController < ApplicationController
         @cake.number_tiers.times {@cake.tiers.build}
        
     end
-    def create
-        @tier = @cake.tiers.build(tier_params)
-        if @tier.save!
-        render 'show'
-        end
-       
-    end
+   
+    
     def show
        @tier = Tier.find_by(params[:id]) 
     end

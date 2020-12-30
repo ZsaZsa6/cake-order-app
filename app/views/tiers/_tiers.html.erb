@@ -1,4 +1,4 @@
-<%= form_for @cake do |f| %>
+<%= form_with model: @cake do |f| %>
    
 
 <%= f.fields_for :tiers do |tier_attributes|%>
@@ -14,7 +14,7 @@
     <%= tier_attributes.label "Tier size in inches"%>
     <%= tier_attributes.number_field :size, in: 4...21, step: 2 %><br>
     <% end %>
-    <%= button_to "Create Tiers", cake_tiers_path, method: :post %>
+    <%= button_to "Create Tiers", tiers_path, method: :post %>
     <% end %>
     <br>
     <br>
