@@ -1,4 +1,4 @@
-class Donuts > ApplicationRecord
+class Donut > ApplicationRecord
     belongs_to :item
     has_many :frostings
     has_many :decorations
