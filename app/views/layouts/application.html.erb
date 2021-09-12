@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Zsa Zsa's Bakery</title>
+    <title>CakeOrderApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,15 +9,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'style.css' %>
   </head>
-  <center><h1>Zsa Zsa's Bakery</h1><br>
-  <h2>Eat More Cake </h2><center>
-    <h3>Live Happy</h3>
-     <%= yield %>
+
   <body>
-  <h2><% flash.each do |type, msg| %>
-      <div id="flash">
-        <%= msg %>
-      </div></h2>
-    <% end %>
+
+    <center><h1>Zsa Zsa's Cake Shop</h1><center>
+    <h3>Eat More Cake </h3>
+    
+    <%= yield %>
+
+    
   </body>
 </html>
