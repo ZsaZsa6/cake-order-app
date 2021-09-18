@@ -6,7 +6,7 @@ class Customer < ApplicationRecord
     validates :password, presence: true
     has_secure_password
     has_many :orders
-    has_many :iems, through: :orders
+    has_many :products, through: :orders
    
     
 end

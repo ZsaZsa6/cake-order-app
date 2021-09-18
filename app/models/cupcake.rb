@@ -1,5 +1,5 @@
 class CupCakes < ApplicationController
-    belongs_to :items
+    belongs_to :product
   
     
 
