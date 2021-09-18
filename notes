@@ -28,8 +28,8 @@ Customer selects products from drop down list, next drop down list
 picks flavors, etc, if cakes, select number of tiers, then
 another option with flavors, size, etc, 
 
-Order id should be created at end. 
+# Order id should be created at end. 
 9/11/21
-So remove order_id from cakes, etc. 
+# So remove order_id from cakes, etc. 
 
 See how that works in the cake_app...
