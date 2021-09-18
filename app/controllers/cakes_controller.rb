@@ -1,12 +1,12 @@
 class CakesController < ApplicationController
-    before_action :set_order
-    before_action :set_orders
-    before_action :set_cake, only: [:show, :edit, :update, :destroy]
+    # before_action :set_order
+    # before_action :set_orders
+    # before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
-    def index
-        @order = Order.find(params[:order_id])
-        @cakes = @order.cakes
-    end
+    # def index
+    #     @order = Order.find(params[:order_id])
+    #     @cakes = @order.cakes
+    # end
 
     def new
         @cake = Cake.new
@@ -43,18 +43,18 @@ class CakesController < ApplicationController
 
     private
    
-    def set_order
-        @order = Order.find_by(id: params[:order_id])
-    end
-    def set_orders 
-        @orders = current_customer.orders 
-    end
-    def set_cake
-        @cake = @order.cakes.find(params[:id])
-     end
+    # def set_order
+    #     @order = Order.find_by(id: params[:order_id])
+    # end
+    # def set_orders 
+    #     @orders = current_customer.orders 
+    # end
+    # def set_cake
+    #     @cake = @order.cakes.find(params[:id])
+    #  end
 
     def cake_params
-      params.require(:cake).permit(:title, :number_tiers, :order_id)
+      params.require(:cake).permit(:title, :number_tiers)
     end  
     
 end

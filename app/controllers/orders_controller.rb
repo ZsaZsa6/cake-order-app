@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     
     def new 
         @order = Order.new(customer_id: [current_customer.id])
-        @order.cakes.build
+       
         
     end
 
@@ -19,10 +19,10 @@ class OrdersController < ApplicationController
     
       @order = Order.new(order_params)
        
-       if @order.save!
+    #    if @order.save!
         
-        redirect_to new_cake_tier_path(@order.cakes.last)
-       end
+        # redirect_to new_cake_tier_path(@order.cakes.last)
+    #    end
     end
 
     def edit
