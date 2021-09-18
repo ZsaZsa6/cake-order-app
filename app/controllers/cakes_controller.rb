@@ -54,7 +54,7 @@ class CakesController < ApplicationController
     #  end
 
     def cake_params
-      params.require(:cake).permit(:title, :number_tiers)
+      params.require(:cake).permit(:title, :number_tiers, :product_id)
     end  
     
 end

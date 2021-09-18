@@ -6,4 +6,7 @@ class CupCakesController < ApplicationController
         create
         @cupcake = Cupcake.(cupcake_params)
     end
+    def cupcake_params
+        params.require(:cupcake).permit(:flavor, :frosting, :filling, :sprinkles, :product_id)
+    end
 end
