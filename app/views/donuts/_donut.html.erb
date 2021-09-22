@@ -1,0 +1,22 @@
+
+   
+
+<%= form_for :donut do |f|%>
+    <br>
+    <br>
+
+    <%= |f|.label "Tier Flavor" %>
+    <%= |f|.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
+    <%= |f|.label "Frosting" %> 
+    <%= |f|.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
+    <%= |f|.label "Filling" %>
+    <%= |f|.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
+    <%= |f|.label "Sprinkles"%>
+    <%= |f|.select(:sprinkles, ['Yes', 'No', 'Extra']) %><br>
+    <% end %>
+    <%= button_to "Create Tiers", tiers_path, method: :post %>
+    <% end %>
+    <br>
+    <br>
+
+ <%= render 'shared/links' %>
