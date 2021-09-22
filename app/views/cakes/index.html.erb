@@ -1,10 +1,7 @@
 
-    <h1> Your Order </h1>
-
-    Order Description:
-    <br><%= @order.description %><br>
+ 
         
-    <% @order.cakes.each do | cake | %>
+    <% cakes.each do | cake | %>
     Cake Title:   <%= cake.title %><br>
     Number of Tiers: <%= cake.number_tiers %><br>
     
