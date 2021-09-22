@@ -4,9 +4,8 @@
 Order Description: <%= order.description %><br>
 
 
-<% order.cakes.each do | cake | %>
-    Cake Title: <%= cake.title %><br>
-    Number of Tiers: <%= cake.number_tiers %><br>
+<% orders.each do | order | %>
+    
     
 
 <%= link_to "See more about this order", order_cake_path(order, cake) %><br>
