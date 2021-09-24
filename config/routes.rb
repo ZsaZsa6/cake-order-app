@@ -17,5 +17,5 @@ Rails.application.routes.draw do
         resources :tiers
     end
   resources :orders
-  end
+
  end
