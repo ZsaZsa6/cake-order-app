@@ -1,14 +1,14 @@
 
 <h3><%= "#{current_customer.username} Select the order you would like to view" %></h3>
-<% @products.each do | order | %>
-    <% 
-
-
 <% orders.each do | order | %>
-    
-    
+   Order Description: <%= order.description %><br>
 
-<%= link_to "See more about this order", order_cake_path(order, cake) %><br>
+
+<% @order.products.each do | product | %>
+    
+    Product Type: <%= product.type %><br>
+
+<%= link_to "See more about this order", order_product_path(order, product) %><br>
 <br><%= link_to "Delete this order", order_path(order), method: :delete %><br>
 <% end %>
 <% end %>
