@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
-   before_action :set_order, only: [:show, :edit, :update, :destroy]
+#    before_action :set_order, only: [:show, :edit, :update, :destroy]
 
 
      def index
         
        @orders = current_customer.orders
-       order_id = Order.find_by(params[:id])
+    #    order = orders.each.find_by(params[:current_customer.id])
     
     end
     
@@ -25,10 +25,10 @@ class OrdersController < ApplicationController
     #    end
     end
 
-    def edit
-        @order = Order.find(params[:id])
+    # def edit
+    #     @order = Order.find(params[:id])
         
-    end
+    # end
     def show
         @order = Order.find_by(params[:id])
     end
@@ -50,8 +50,8 @@ class OrdersController < ApplicationController
     def order_params
         params.require(:order).permit(:description, :customer_id, cakes_attributes: [:id, :title, :number_tiers])
     end 
-    def set_order
-        @order = Order.find(params[:id])
-    end
+    # def set_order
+    #     @order = Order.find(params[:id])
+    # end
     
 end
