@@ -55,3 +55,13 @@ See how that works in the cake_app...
     <% end %>
     <%= button_to "Create order", orders_path, method: :post %> 
     <% end %>
+
+
+    9/28
+    Goals for 9/29-9/30
+
+    make radio buttons on products new view
+    add quantity to donuts and cupcakes models
+    build out donut and cupcake forms
+    add show forms
+    add to controllers

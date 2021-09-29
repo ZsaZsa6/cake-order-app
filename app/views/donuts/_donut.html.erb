@@ -7,11 +7,11 @@
 
     <%= donut_attributes.label "Donut Flavor" %>
     <%= donut_attributes.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
-    <%= donut_attributes.label "Frosting" %> 
+    <%= donut_attributes.label "Donut Frosting" %> 
     <%= donut_attributes.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
-    <%= donut_attributes.label "Filling" %>
+    <%= donut_attributes.label "Donut Filling" %>
     <%= donut_attributes.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
-    <%= donut_attributes.label "Sprinkles"%>
+    <%= donut_attributes.label "Donut Sprinkles"%>
     <%= donut_attributes.sprinkles :size, in: 4...21, step: 2 %><br>
     <% end %>
     <%= button_to "Create Donut", product_donut_path, method: :post %>
