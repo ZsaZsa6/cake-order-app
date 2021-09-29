@@ -1,0 +1,22 @@
+<%= form_with model: @product do |f| %>
+   
+
+<%= f.fields_for :cupcakes do |cupcake_attributes|%>
+    <br>
+    <br>
+
+    <%= cupcake_attributes.label "Cupcake Flavor" %>
+    <%= cupcake_attributes.select(:flavor, ['Chocolate', 'Vanilla', 'Strawberry', 'Maple']) %><br>
+    <%= cupcake_attributes.label "Cupcake Frosting" %> 
+    <%= cupcake_attributes.select(:frosting, ['Chocolate', 'Vanilla', 'Cream Cheese', 'Maple']) %><br>
+    <%= cupcake_attributes.label "Cupcake Filling" %>
+    <%= cupcake_attributes.select(:filling, ['Chocolate', 'Vanilla Cream', 'Cream Cheese', 'Maple', 'Cookies n Cream', 'Strawberries & Cream']) %><br>
+    <%= cupcake_attributes.label "Cupcake Sprinkles"%>
+    <%= cupcake_attributes.select %><br>
+    <% end %>
+    <%= button_to "Create Tiers", tiers_path, method: :post %>
+    <% end %>
+    <br>
+    <br>
+
+ <%= render 'shared/links' %
