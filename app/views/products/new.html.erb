@@ -1,5 +1,15 @@
 
-
+<h2>
+<%= form_for @product do |f| %>
+<%= f.label "Donut" %>
+<%= f.radio_button(:type, "donut") %><br>
+<%= f.label "Cupcake" %>
+<%= f.radio_button(:type, "cupcake") %><br>
+<%= f.label "Cake" %>
+<%= f.radio_button(:type, "cake") %><br>
+<%= f.submit "Create" %>
+<% end %>
+</h2>
 
 
 
