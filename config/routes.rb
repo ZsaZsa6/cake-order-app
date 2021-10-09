@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create", as: "session"
   delete '/sessions', to: "sessions#destroy", as: "logout"
-   
+  
   
   resources :customers
+  resources :orders
+  
   # resources :orders, only: [:create, :edit, :update, :destroy]
   resources :products do
     resources :donuts
@@ -14,9 +16,8 @@ Rails.application.routes.draw do
     resources :cupcakes
   end
   resources :products do
-    resources :cakes
-  end
-  
+    resources :tiers
+  end 
 
   resources :customers do
       resources :products 
@@ -25,9 +26,5 @@ Rails.application.routes.draw do
       resources :orders, only: [:index, :show, :edit, :update, :destroy]
   end
   
-    resources :cakes do 
-        resources :tiers
-    end
-  resources :orders
 
  end
