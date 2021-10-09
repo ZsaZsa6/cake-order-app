@@ -12,6 +12,6 @@ class ProductsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:type)
+        params.require(:product).permit(:type, :donut, :cake, :cupcake)
     end
 end

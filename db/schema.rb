@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_02_135806) do
-
-  create_table "cakes", force: :cascade do |t|
-    t.string "title"
-    t.integer "number_tiers"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "product_id"
-  end
+ActiveRecord::Schema.define(version: 2021_10_09_185647) do
 
   create_table "cupcakes", force: :cascade do |t|
     t.string "flavor"
