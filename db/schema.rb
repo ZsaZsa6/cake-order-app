@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_09_185647) do
+ActiveRecord::Schema.define(version: 2021_10_09_191233) do
 
   create_table "cupcakes", force: :cascade do |t|
     t.string "flavor"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2021_10_09_185647) do
     t.string "flavor"
     t.string "frosting"
     t.string "filling"
-    t.integer "cake_id"
     t.integer "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

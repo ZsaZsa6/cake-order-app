@@ -1,13 +1,13 @@
 class TiersController < ApplicationController
   
     def index
-        @cake = Cake.find_by(params[:cake_id])
-      
+        @tiers = Tier.find_by(params[:tier_id])      
     end
+
     def new
                 
-        @tier = Tier.new(cake_id: @cake.id)
-        @cake.number_tiers.times {@cake.tiers.build}
+        @tier = Tier.new(tier_params)
+        
        
     end
    
@@ -29,11 +29,8 @@ class TiersController < ApplicationController
     end
     private
 
-    def set_cake
-        @cake = Cake.find_by(id: params[:cake_id])
-    end
     
     def tier_params
-        params.require(:tier).permit(:flavor, :filling, :frosting, :size, :cake_id)
+        params.require(:tier).permit(:flavor, :filling, :frosting, :size)
     end
 end
