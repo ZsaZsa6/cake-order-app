@@ -1,4 +1,4 @@
-class CakeTiersController < ApplicationController
+class TiersController < ApplicationController
   
     def index
         @cake = Cake.find_by(params[:cake_id])
