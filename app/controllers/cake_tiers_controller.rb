@@ -1,8 +1,8 @@
-class TiersController < ApplicationController
-    before_action :set_cake, only: [:index, :new, :create]
+class CakeTiersController < ApplicationController
+  
     def index
         @cake = Cake.find_by(params[:cake_id])
-        @tiers = @cake.tiers
+      
     end
     def new
                 
