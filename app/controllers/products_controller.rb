@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
     def new
-        @product = Product.new
+        @product = Product.new(product_params)
     end
     def create
-        @product = Product.create
+        @product = Product.create(product_params)
     end
 
     def show
@@ -12,6 +12,6 @@ class ProductsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:type, :donut, :cake, :cupcake)
+        params.require(:product).permit(:type, :donut, :tier, :cupcake)
     end
 end

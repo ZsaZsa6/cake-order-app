@@ -1,14 +1,11 @@
 class TiersController < ApplicationController
   
     def index
-        @tiers = Tier.find_by(params[:tier_id])      
+        @tiers = Tier.find(params[:id]))      
     end
 
-    def new
-                
+    def new                
         @tier = Tier.new(tier_params)
-        
-       
     end
    
     
